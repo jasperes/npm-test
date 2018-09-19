@@ -1,0 +1,8 @@
+deploy:
+  provider: npm
+  email: jonathan.peres@protonmail.com
+  api_key:
+    secure: Z69f8EdYc0InqXWGu0J7L4TEVQPZtWfsl3AbAL3bDrXZEU45pj9gahSoEJiKzUf4sRAq70FqsE309MYG+O6xifempKmEtCM+EZnMaS5IK28yPg2erBYWnFEEsaSxLKSznm5yGhY7nppv0hAUcmmWe0zFRkIgLaEjiNneU1LKHOQI0s4/q01BOieB3MegkmXK4OgHvNdTV74yzMwygWGOlD4GoMbg1GQX+gQkdSHEFeHSYAQnbQ//js0+x4iDKBP/Mob3dVbelimqRQTYONSbT+lscRFbeo1X4hHG4SvbB6jzB1nmcvq0cCqXZQ0dmv9XhZ1tm0/f51JXbqPcyYFf6dLA7es+DAsGVE6TkBxK4xvpOEKyo1AUoIfqqlB1SRHBxcKoFovwFb5hu0GvXMdtFS2dJs6pDeEjZu3G5EOSMzdpgxRYd1jzE4ZCjR7hfMk4VRBoaWz9e/cVePrmqHEYrztvKExPDDk2l5bchAEEK+iG2hXK7BkrFkdfYB1hbn/mzR4qCPoR9uUUZ5CFMv6ZAu3BpN0pz+g9HRsbcE4s8tTMcoRLEHZ5Z6XyCgq9XGcJ4FRiM3TmA97maF/3BfzW14dw6M8PuFVrZuEV9NKYQVw+E3q8vBV9VFjf+awMmAp6HGCguggmZVJMW1mFPF56LUc5hZSH6eUUENc4bDo5udA=
+  on:
+    repo: jasperes/npm-test
+    branch: master
