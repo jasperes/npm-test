@@ -1,5 +1,5 @@
 {
-  "name": "npm-test",
+  "name": "jasperes-npm-test",
   "version": "0.0.1",
   "description": "npm CI test",
   "scripts": {
