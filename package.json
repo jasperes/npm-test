@@ -15,10 +15,10 @@
   "bugs": {
     "url": "https://github.com/jasperes/npm-test/issues"
   },
-  "files": {
+  "files": [
     "main.sh",
     "README.md"
-  },
+  ],
   "bin": {
     "jasperes-npm-test": "./main.sh"
   },
