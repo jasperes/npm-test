@@ -1,5 +1,5 @@
 {
-  "name": "jasperes-npm-test",
+  "name": "@personal-distro-configurator/jasperes-npm-test-qwerty",
   "version": "0.0.7",
   "description": "npm CI test",
   "scripts": {
