@@ -1,6 +1,6 @@
 {
   "name": "jasperes-npm-test",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "npm CI test",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
@@ -10,11 +10,10 @@
   "license": "MIT",
   "bugs": "https://github.com/jasperes/npm-test/issues",
   "files": [
-    "main.sh",
-    "README.md"
+    "runner"
   ],
   "bin": {
-    "jasperes-npm-test": "./main.sh"
+    "jasperes-npm-test": "./runner/main.sh"
   },
   "publishConfig": {
     "access": "public"
