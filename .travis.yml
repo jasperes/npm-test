@@ -9,7 +9,6 @@ jobs:
     language: node_js
     os: linux
     node_js: 8
-    before_install: if [[ `npm -v` != 5* ]]; then npm i -g npm@5; fi
     install: npm install --only=dev
     script: npm test
 
@@ -19,10 +18,8 @@ jobs:
     node_js: 8
     deploy:
       provider: npm
-      email:
-        secure: haUdUK7hgZSiqAVcpeAs/nI77qcoEWAhaSqF2Dnc0S4UOGxS7+vqAOvCs5l4OVqSsKDgLe+E47YeXzCtJb7RhmJhsZup383bajjAedwwQnApgC2EQTbLkwnhg0te0KhJYpTpcYJpQprbVmnZajioijsPh80by7mNe6V8aHxpylz2u4Eh/p7UIyilCK8OO3MXqAqBrkWo73fI6m3JtSMJisDfrZY5EBabIhAtsuSFnBkJMfoS23nY4AivzLODtGvMuwgTU+tuGuBvfYARxQfOfbFeWTGjR6YDKUa5t6cI24PtHJj8ZOZRABUykzEoLVlGd+or6l+gL+CRBRuUxw5bRh0bJ11evKPXiqxE9pU0qV5nycFk9U+AieFiHFylItcUOSauXbkQD501EakvGPob+aovU5s3/ATTF71L9FCl0MuXhV+HZ/MsGm3Dxvu4v2XriXbVrQUEW5Lz7ybO+ZLhcX0eurfd3l8ivpmJtWfA37QWmK+hVIJnSACspf2mh9vO8D1Ci6+66sY26L8+xx8gCf69dcFMFsI/55J6RXZ2+kjhhAG5/vDzEdm1vbFYb4FPE1jjvCiYBVPW6YH/ffGVCLaoZ45lZEkgHiLwlKD8W2Uv07bN+x8eFcxcxu57ZMAdkfONIN49dbQKLeY4dm6NxXIUTzhpl4Igj03kf94bAZQ=
-      api_key:
-        secure: EukSyRWJU0kJorduqc1uXCybXvjG0rDb4+ic/PJpM96XbYMTUy5Zkxv5JZaJu9OFu0DWpvwQqi+242d4MiI+AFCZc0+hjEysfkbFwYpalZhkVC/2xSuI7GD1raodNO/qZkJnb0/tsB+anIYyX6pj2uvFlXn1t2N4KcPqlck85XNX9pkx/ycAv+khem+n7mmnBeseLAnETQs3qu3XazlkEkx1K4I/99ZvMgW/4sun3hztitMykDUKZJTbZbuW0uQmKYOs99GkS1A+WL9omGTtQyW35PFJGpKHD0g44OMi3pzp4C4jusUC/oXQ3lskLbAL0flLXgWqWQXJFl6UeFD7bY7LX/0vGbU7X35T75TgQTe1KlysafaH9kfWgU0DmWET6kNk4c4NTN68pw5SLMKEtKyRPoxiEvJteANtblXxVfmK5MMPqp45oiXXyO1nfG/EglIkQ1EgHZbn+ctFALSoRJgepI4GnFJbWM+jPGhA9Tylv7eNTtAH7o5TtSZFqFt3i44si/V+4t3O/LxiDhM/q7U5B7AMOKR3TQo2U8dHCyGyBa+zG1frDHkoVIEUf3KiHAAM5ULHW3jDgtyywaKBUQTqfZJVEcQyx8zsLTynCAbfp3JTWb95wJEVa0TKFl0zE7lEASBOIAnwOlyO4wiH5BD9Plv39gYiZi0YJGGO4uI=
+      email: "$NPM_EMAIL"
+      api_key: "$NPM_TOKEN"
       skip_cleanup: true
       on:
         branch: master
