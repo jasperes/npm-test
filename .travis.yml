@@ -9,6 +9,16 @@ jobs:
     install: npm install --only=dev
     script: npm test
 
+  - stage: release
+    script: npm version minor
+    after_script: git push; git push --tags
+    if: branch = release
+
+  - stage: hotfix
+    script: npm version patch
+    after_script: git push
+    if: branch = hotfix
+
   - stage: deploy
     deploy:
       provider: npm
@@ -20,6 +30,5 @@ jobs:
         repo: jasperes/npm-test
 
 notifications:
-  email:
-    on_success: never
+  email: false
 
