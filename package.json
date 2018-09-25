@@ -1,19 +1,14 @@
 {
-  "name": "@personal-distro-configurator/jasperes-npm-test-qwerty",
-  "version": "0.0.7",
+  "name": "jasperes-npm-test",
+  "version": "0.0.8",
   "description": "npm CI test",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jasperes/npm-test.git"
-  },
+  "repository": "github:jasperes/npm-test.git",
   "author": "Jonathan Peres <jonathan.peres@protonmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jasperes/npm-test/issues"
-  },
+  "bugs": "https://github.com/jasperes/npm-test/issues",
   "files": [
     "main.sh",
     "README.md"
