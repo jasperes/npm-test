@@ -1,6 +1,6 @@
 {
-  "name": "@personal-distro-configurator/jasperes-test",
-  "version": "0.1.0",
+  "name": "jasperes-npm-test",
+  "version": "0.0.7",
   "description": "npm CI test",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
