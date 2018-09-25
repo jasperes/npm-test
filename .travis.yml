@@ -1,13 +1,32 @@
-language: node_js
-node_js: "8"
-before_deploy:
-  - npm run build
-deploy:
-  provider: npm
-  email: jonathan.peres@protonmail.com
-  api_key:
-    secure: Z69f8EdYc0InqXWGu0J7L4TEVQPZtWfsl3AbAL3bDrXZEU45pj9gahSoEJiKzUf4sRAq70FqsE309MYG+O6xifempKmEtCM+EZnMaS5IK28yPg2erBYWnFEEsaSxLKSznm5yGhY7nppv0hAUcmmWe0zFRkIgLaEjiNneU1LKHOQI0s4/q01BOieB3MegkmXK4OgHvNdTV74yzMwygWGOlD4GoMbg1GQX+gQkdSHEFeHSYAQnbQ//js0+x4iDKBP/Mob3dVbelimqRQTYONSbT+lscRFbeo1X4hHG4SvbB6jzB1nmcvq0cCqXZQ0dmv9XhZ1tm0/f51JXbqPcyYFf6dLA7es+DAsGVE6TkBxK4xvpOEKyo1AUoIfqqlB1SRHBxcKoFovwFb5hu0GvXMdtFS2dJs6pDeEjZu3G5EOSMzdpgxRYd1jzE4ZCjR7hfMk4VRBoaWz9e/cVePrmqHEYrztvKExPDDk2l5bchAEEK+iG2hXK7BkrFkdfYB1hbn/mzR4qCPoR9uUUZ5CFMv6ZAu3BpN0pz+g9HRsbcE4s8tTMcoRLEHZ5Z6XyCgq9XGcJ4FRiM3TmA97maF/3BfzW14dw6M8PuFVrZuEV9NKYQVw+E3q8vBV9VFjf+awMmAp6HGCguggmZVJMW1mFPF56LUc5hZSH6eUUENc4bDo5udA=
-  skip_cleanup: true
-  on:
-    repo: jasperes/npm-test
-    branch: master
+stages:
+  - test
+  - deploy
+
+jobs:
+  include:
+
+  - stage: test
+    language: node_js
+    os: linux
+    node_js: 8
+    before_install: if [[ `npm -v` != 5* ]]; then npm i -g npm@5; fi
+    install: npm install --only=dev
+    script: npm test
+
+  - stage: deploy
+    deploy:
+      provider: npm
+      email:
+        secure: haUdUK7hgZSiqAVcpeAs/nI77qcoEWAhaSqF2Dnc0S4UOGxS7+vqAOvCs5l4OVqSsKDgLe+E47YeXzCtJb7RhmJhsZup383bajjAedwwQnApgC2EQTbLkwnhg0te0KhJYpTpcYJpQprbVmnZajioijsPh80by7mNe6V8aHxpylz2u4Eh/p7UIyilCK8OO3MXqAqBrkWo73fI6m3JtSMJisDfrZY5EBabIhAtsuSFnBkJMfoS23nY4AivzLODtGvMuwgTU+tuGuBvfYARxQfOfbFeWTGjR6YDKUa5t6cI24PtHJj8ZOZRABUykzEoLVlGd+or6l+gL+CRBRuUxw5bRh0bJ11evKPXiqxE9pU0qV5nycFk9U+AieFiHFylItcUOSauXbkQD501EakvGPob+aovU5s3/ATTF71L9FCl0MuXhV+HZ/MsGm3Dxvu4v2XriXbVrQUEW5Lz7ybO+ZLhcX0eurfd3l8ivpmJtWfA37QWmK+hVIJnSACspf2mh9vO8D1Ci6+66sY26L8+xx8gCf69dcFMFsI/55J6RXZ2+kjhhAG5/vDzEdm1vbFYb4FPE1jjvCiYBVPW6YH/ffGVCLaoZ45lZEkgHiLwlKD8W2Uv07bN+x8eFcxcxu57ZMAdkfONIN49dbQKLeY4dm6NxXIUTzhpl4Igj03kf94bAZQ=
+      api_key:
+        secure: EukSyRWJU0kJorduqc1uXCybXvjG0rDb4+ic/PJpM96XbYMTUy5Zkxv5JZaJu9OFu0DWpvwQqi+242d4MiI+AFCZc0+hjEysfkbFwYpalZhkVC/2xSuI7GD1raodNO/qZkJnb0/tsB+anIYyX6pj2uvFlXn1t2N4KcPqlck85XNX9pkx/ycAv+khem+n7mmnBeseLAnETQs3qu3XazlkEkx1K4I/99ZvMgW/4sun3hztitMykDUKZJTbZbuW0uQmKYOs99GkS1A+WL9omGTtQyW35PFJGpKHD0g44OMi3pzp4C4jusUC/oXQ3lskLbAL0flLXgWqWQXJFl6UeFD7bY7LX/0vGbU7X35T75TgQTe1KlysafaH9kfWgU0DmWET6kNk4c4NTN68pw5SLMKEtKyRPoxiEvJteANtblXxVfmK5MMPqp45oiXXyO1nfG/EglIkQ1EgHZbn+ctFALSoRJgepI4GnFJbWM+jPGhA9Tylv7eNTtAH7o5TtSZFqFt3i44si/V+4t3O/LxiDhM/q7U5B7AMOKR3TQo2U8dHCyGyBa+zG1frDHkoVIEUf3KiHAAM5ULHW3jDgtyywaKBUQTqfZJVEcQyx8zsLTynCAbfp3JTWb95wJEVa0TKFl0zE7lEASBOIAnwOlyO4wiH5BD9Plv39gYiZi0YJGGO4uI=
+      skip_cleanup: true
+      on:
+        branch: master
+        tags: true
+        repo: personal-distro-configurator/jasperes-test
+
+notifications:
+  email:
+    on_success: never
+
