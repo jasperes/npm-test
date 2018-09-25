@@ -1,6 +1,6 @@
 {
   "name": "jasperes-npm-test",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "npm CI test",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
